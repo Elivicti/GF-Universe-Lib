@@ -1,0 +1,45 @@
+on_actions = {
+    # 'x' or 'x = xxx'
+    # 'x' can also be a pattern expression (template expression, ant expression or regex)
+
+    ### 坍塌液短缺局势 启动 时发射
+    ## replace_scopes = { this = situation root = situation }
+    ## event_type = situation
+    GF_on_situation_collapse_liquid_deficit_start
+
+    ### 坍塌液短缺局势 中止 时发射
+    ## replace_scopes = { this = situation root = situation }
+    ## event_type = situation
+    GF_on_situation_collapse_liquid_deficit_abort
+
+    ### 坍塌液短缺局势 进度完成 时发射
+    ## replace_scopes = { this = situation root = situation }
+    ## event_type = situation
+    GF_on_situation_collapse_liquid_deficit_progress_complete
+
+    ### 坍塌液短缺局势 进度归零 时发射
+    ## replace_scopes = { this = situation root = situation }
+    ## event_type = situation
+    GF_on_situation_collapse_liquid_deficit_fail
+}
+
+definitions = {
+    # 'x' or 'x = xxx'
+    # 'x' can also be a pattern expression (template expression, ant expression or regex)
+
+    ### 是否可组装人形
+    ### this = 物种所有者
+    ### root = 物种人口所在的星球
+    ### prev = 物种
+    ## type = scripted_trigger
+    ## replace_scopes = { this = country root = planet }
+    GF_can_build_doll_species
+
+    ### 是否可交易机械领袖
+    ### This = 要交易的领袖
+    ### Root = 当前领袖所有者
+    ### From = 交易对象
+    ## type = scripted_trigger
+    ## replace_scopes = { this = leader root = country from = country }
+    GF_can_trade_robotic_leader
+}
