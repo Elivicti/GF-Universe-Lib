@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+
+ GF_nyto_collapse_liquid: "坍塌液"
+ GF_nyto_collapse_liquid_desc: "指一种粒子波，组成成分不明，可观测到的部分仅有底夸克和光子，在密封环向偏振装置的作用下变得可视化，宏观上表现为一种反射绿光的类液态流状物质，因此被称作坍塌液，其本质为高密度的粒子聚合，在高温爆炸后变为具有极高放射性的坍塌粒子，在高速穿透物质后会转化为量子隐态，具有诱导细胞变异的能力。"
+
+ GF_situation_collapse_liquid_deficit: "坍缩液匮乏"
+ GF_situation_collapse_liquid_deficit_type: "坍缩液匮乏"
+ GF_situation_collapse_liquid_deficit_desc: "我们的$GF_nyto_collapse_liquid$赤字已经失控了！"
+ GF_situation_collapse_liquid_deficit_commonwealth_desc: "$GF_situation_collapse_liquid_deficit_desc$所有依赖$GF_nyto_collapse_liquid$的设施或设备都停摆了！"
+ GF_situation_collapse_liquid_deficit_nyto_desc: "坍缩液匮乏，无论日常生活还是生产建造都陷入瘫痪。"
+
+ GF_situation_collapse_liquid_deficit_monthly_change_tooltip:0 "$situation_deficit_monthly_change_tooltip$"
+ string_not_in_deficit_GF_nyto_collapse_liquid:0 "$GF_nyto_collapse_liquid$月度结余为正"
+ string_resource_reserves_GF_nyto_collapse_liquid:0 "$GF_nyto_collapse_liquid$储备"
+ string_expenditures_greater_than_income_GF_nyto_collapse_liquid:0 "$GF_nyto_collapse_liquid$赤字"
+
+ GF_deficit_collapse_liquid_approach: "坍缩液匮乏"
+ GF_deficit_collapse_liquid_approach_nyto: "$GF_deficit_collapse_liquid_approach$"
+ GF_deficit_collapse_liquid_approach_commonwealth_do_nothing: "维持当前支出"
+ GF_deficit_collapse_liquid_approach_commonwealth_collapser_subsidies: "坍塌反应技师补贴"

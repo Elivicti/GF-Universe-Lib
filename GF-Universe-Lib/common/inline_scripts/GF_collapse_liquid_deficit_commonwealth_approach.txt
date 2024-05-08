@@ -1,0 +1,80 @@
+triggered_modifier = {
+	potential = {
+		owner = {
+			GF_should_country_has_collapse_liquid_deficit_debuff = {
+				OR_HAS_TECH = GF_tech_reverse_collapse_plant
+			}
+		}
+	}
+	modifier = {
+		GF_planet_reverse_collapser_produces_mult = -10
+	}
+}
+
+triggered_modifier = {
+	potential = {
+		owner = {
+			GF_should_country_has_collapse_liquid_deficit_debuff = {
+				OR_HAS_TECH = GF_tech_collapsetech_weaponize
+			}
+		}
+	}
+	modifier = {
+		GF_ship_collapse_armors_alloys_upkeep_mult = 5
+		GF_ship_collapse_utilities_alloys_upkeep_mult = 5
+		GF_ship_collapse_weapons_alloys_upkeep_mult = 5
+		weapon_type_GF_collapsed_weapon_damage_mult = -10
+		weapon_type_GF_collapsed_weapon_fire_rate_mult = -10
+	}
+}
+
+approach = {
+	name = GF_deficit_collapse_liquid_approach_commonwealth_do_nothing
+	icon = GFX_situation_approach_this_is_fine
+	icon_background = GFX_situation_approach_bg_yellow
+	default = yes
+
+	potential = {
+		owner = { has_authority = GF_auth_commonwealth }
+	}
+
+
+	ai_weight = {
+		base = 0
+		modifier = {
+			set = 100
+			owner = { has_authority = GF_auth_commonwealth }
+		}
+	}
+}
+approach = {
+	name = GF_deficit_collapse_liquid_approach_commonwealth_collapser_subsidies
+	icon = GFX_situation_approach_balance_sheet
+	icon_background = GFX_situation_approach_bg_yellow
+
+	potential = {
+		owner = { has_authority = GF_auth_commonwealth }
+	}
+
+	modifier = {
+		GF_planet_collapser_upkeep_mult = 1
+		GF_planet_collapser_produces_mult = 1
+	}
+
+	resources = {
+		category = situations
+		upkeep = { energy = 20 }
+	}
+
+	ai_weight = {
+		base = 0
+		modifier = {
+			set = 120
+			owner = { has_authority = GF_auth_commonwealth }
+		}
+		modifier = {
+			factor = 0
+			owner = { owner = { has_actual_deficit = { RESOURCE = energy } } }
+		}
+	}
+}

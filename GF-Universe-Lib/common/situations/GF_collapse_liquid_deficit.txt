@@ -1,0 +1,97 @@
+GF_situation_collapse_liquid_deficit = {
+	picture = GFX_evt_deficit
+	category = negative
+	fail_icon = GFX_situation_outcome_meh
+	fail_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_bankrupcy
+	complete_icon_frame = GFX_situation_outcome_frame_red
+
+	on_start = {
+		fire_on_action = {
+			on_action = GF_on_situation_collapse_liquid_deficit_start
+		}
+	}
+	on_abort = {
+		fire_on_action = {
+			on_action = GF_on_situation_collapse_liquid_deficit_abort
+		}
+	}
+
+	desc = {
+		text = GF_situation_collapse_liquid_deficit_desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_authority = auth_GF_paradeus
+					has_authority = GF_auth_commonwealth
+				}
+			}
+		}
+	}
+
+	desc = {
+		text = GF_situation_collapse_liquid_deficit_nyto_desc
+		trigger = { owner = { has_authority = auth_GF_paradeus } }
+	}
+
+	desc = {
+		text = GF_situation_collapse_liquid_deficit_commonwealth_desc
+		trigger = { owner = { has_authority = GF_auth_commonwealth } }
+	}
+
+	start_value = 50
+	stages = {
+		deficit_stage = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+		}
+	}
+
+	on_progress_complete = {
+		hidden_effect = {
+			destroy_situation = this
+			fire_on_action = {
+				on_action = GF_on_situation_collapse_liquid_deficit_progress_complete
+			}
+		}
+	}
+	on_fail = {
+		custom_tooltip = deficit_situation_finish_tooltip
+		hidden_effect = {
+			destroy_situation = this
+			fire_on_action = {
+				on_action = GF_on_situation_collapse_liquid_deficit_fail
+			}
+		}
+	}
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = 5
+			desc = string_expenditures_greater_than_income_GF_nyto_collapse_liquid
+			owner = { has_actual_deficit = { RESOURCE = GF_nyto_collapse_liquid } }
+			situation_progress < 50
+		}
+		modifier = {
+			subtract = 5
+			desc = string_not_in_deficit_GF_nyto_collapse_liquid
+			owner = {
+				resource_income_compare = {
+					resource = GF_nyto_collapse_liquid
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			subtract = 1
+			desc = string_resource_reserves_GF_nyto_collapse_liquid
+			owner = {
+				has_negative_income_with_stockpile = { RESOURCE = GF_nyto_collapse_liquid }
+			}
+		}
+	}
+
+	inline_script = GF_collapse_liquid_deficit_nyto_approach
+	inline_script = GF_collapse_liquid_deficit_commonwealth_approach
+}

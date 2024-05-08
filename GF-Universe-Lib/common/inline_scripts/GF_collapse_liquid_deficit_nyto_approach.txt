@@ -1,0 +1,22 @@
+approach = {
+	name = GF_deficit_collapse_liquid_approach_nyto
+	icon = GFX_situation_approach_balance_sheet
+	icon_background = GFX_situation_approach_bg_yellow
+
+	potential = {
+		owner = { has_authority = auth_GF_paradeus } # 涅托
+	}
+
+	modifier = {
+		planet_stability_add = -200
+		country_produces_mult = -0.25
+	}
+
+	ai_weight = {
+		base = 0
+		modifier = {
+			set = 100
+			owner = { has_authority = auth_GF_paradeus }
+		}
+	}
+}

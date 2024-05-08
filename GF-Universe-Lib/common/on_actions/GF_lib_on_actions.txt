@@ -1,0 +1,25 @@
+
+# 坍塌液短缺局势 启动 时发射
+# this = situation
+GF_on_situation_collapse_liquid_deficit_start = {
+	events = {  }
+}
+
+# 坍塌液短缺局势 中止 时发射
+# this = situation
+GF_on_situation_collapse_liquid_deficit_abort = {
+	events = {  }
+}
+
+# 坍塌液短缺局势 进度完成 时发射
+# this = situation
+GF_on_situation_collapse_liquid_deficit_progress_complete = {
+	events = {  }
+}
+
+# 坍塌液短缺局势 进度归零 时发射
+# this = situation
+GF_on_situation_collapse_liquid_deficit_fail = {
+	events = {  }
+}
+
