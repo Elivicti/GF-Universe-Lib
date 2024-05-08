@@ -1,0 +1,3 @@
+
+GF_can_build_doll_species = { always = yes }
+GF_can_trade_robotic_leader = { always = no }
